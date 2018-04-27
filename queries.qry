@@ -24,3 +24,9 @@ query AllJournals {
   statement:
     SELECT org.sample.Journal
 }
+
+query AllJournalOwners {
+  description: "Select all journal owners"
+  statement:
+    SELECT org.sample.JournalOwner
+}
