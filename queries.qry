@@ -30,3 +30,9 @@ query AllJournalOwners {
   statement:
     SELECT org.sample.JournalOwner
 }
+query AllPapers {
+  description: "Select all papers"
+  statement:
+    SELECT org.sample.Paper
+
+}

@@ -136,5 +136,6 @@ rule AdminVakAccessToJournals {
   participant: "org.sample.AdminVak"
   operation: READ, UPDATE
   resource: "org.sample.Journal"
+  transaction: "org.sample.ProposeVAK"
   action: ALLOW
 }
