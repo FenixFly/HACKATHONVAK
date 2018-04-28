@@ -87,19 +87,45 @@ transaction CancelTrade {
 transaction SetupJournalDemo  {
 }
 
+/**
+ * Journal asset
+ */
 asset Journal identified by issn {
   o String issn
+  o String title
   --> JournalOwner owner
   o Boolean isVAK
   o Boolean isScopus
 }
 
+/**
+ * Paper asset
+ */
+asset Paper identified by id {
+  o String id
+  o String title
+  --> Journal journal
+}
+
+/**
+ * JournalOwner participant
+ */
 participant JournalOwner identified by email {
   o String email
   o String firstName
   o String lastName
 }
 
+/**
+ * VAK participant
+ */
 participant AdminVak identified by email {
   o String email
+}
+
+/**
+ * A transaction type for change status in VAK
+ */
+transaction ProposeVAK {
+  --> Journal journal
 }

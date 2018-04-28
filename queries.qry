@@ -20,7 +20,7 @@ query AnimalsByType {
 //////////////////////////////////////////////////////////////////////
 
 query AllJournals {
-  description: "Select all journal"
+  description: "Select all journals"
   statement:
     SELECT org.sample.Journal
 }
