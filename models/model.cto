@@ -82,6 +82,14 @@ transaction CancelTrade {
 //////////////////////////////////////////////////////////////////////
 
 /**
+ * The paper status
+ */
+enum PaperStatus {
+  o SENT_TO_PUBLIS
+  o PUBLISHED
+}
+
+/**
  * Set initial journal data to the model
  */
 transaction SetupJournalDemo  {
@@ -105,6 +113,7 @@ asset Paper identified by id {
   o String id
   o String title
   --> Journal journal
+  o PaperStatus status
 }
 
 /**
