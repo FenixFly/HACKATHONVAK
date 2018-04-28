@@ -121,3 +121,20 @@ rule UpdateAnimalsWithTransactionCancelTrade {
 //                          Start my code                           //
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+rule VakUpdateJournalStatus {
+  description: "Allow VAK admin update Journal VAK status"
+  participant: "org.sample.AdminVak"
+  operation: ALL
+  resource: "org.sample.Journal"
+  transaction: "org.sample.ProposeVAK"
+  action: ALLOW
+}
+
+rule AdminVakAccessToJournals {
+  description: "Admin VAK access"
+  participant: "org.sample.AdminVak"
+  operation: READ, UPDATE
+  resource: "org.sample.Journal"
+  action: ALLOW
+}
